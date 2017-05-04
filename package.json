@@ -1,6 +1,6 @@
 {
   "name": "cnfgrble",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Checks if property is configurable.",
   "main": "cnfgrble.js",
   "support": "cnfgrble.support.js",
@@ -20,15 +20,18 @@
     "configurable"
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "contributors": [
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/volkovasystems/cnfgrble/issues"
   },
   "homepage": "https://github.com/volkovasystems/cnfgrble#readme",
   "dependencies": {
-    "asyum": "^0.0.0",
+    "asyum": "^0.3.0",
     "babel-runtime": "^6.23.0",
-    "dscrb": "^0.1.0",
+    "dscrb": "^0.2.0",
     "zelf": "^0.11.0"
   },
   "devDependencies": {
