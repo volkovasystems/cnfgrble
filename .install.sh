@@ -1,7 +1,7 @@
 yarn add \
 babel-runtime \
-asyum \
 dscrb \
+kein \
 zelf \
 --save && \
 yarn add \
@@ -13,8 +13,8 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-asyum \
 dscrb \
+kein \
 zelf \
 --save \
 --force-latest

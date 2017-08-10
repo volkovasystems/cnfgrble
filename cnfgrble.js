@@ -49,15 +49,15 @@
 
 	@include:
 		{
-			"asyum": "asyum",
 			"dscrb": "dscrb",
+			"kein": "kein",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
-const asyum = require( "asyum" );
 const dscrb = require( "dscrb" );
+const kein = require( "kein" );
 const zelf = require( "zelf" );
 
 const cnfgrble = function cnfgrble( property, entity ){
@@ -78,19 +78,7 @@ const cnfgrble = function cnfgrble( property, entity ){
 		entity = zelf( this );
 	}
 
-	let descriptor = asyum( { }, function flush( ){ } );
-
-	try{
-		descriptor = dscrb( property, entity );
-
-		return descriptor.configurable( );
-
-	}catch( error ){
-		throw new Error( `cannot check if property is configurable, ${ error.stack }` );
-
-	}finally{
-		descriptor.flush( );
-	}
+	return ( kein( property, entity ) && dscrb( property, entity ).configurable( ) );
 };
 
 module.exports = cnfgrble;
