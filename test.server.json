@@ -1,0 +1,60 @@
+{
+	"stats": {
+		"suites": 4,
+		"tests": 3,
+		"passes": 3,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-29T02:53:15.071Z",
+		"end": "2017-08-29T02:53:15.078Z",
+		"duration": 7
+	},
+	"tests": [
+		{
+			"title": "should return true",
+			"fullTitle": "cnfgrble `cnfgrble( 'property', { 'property': 'value' } )` should return true",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `cnfgrble( 'property', { } )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `non-configurable property` should return false",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should return true",
+			"fullTitle": "cnfgrble `cnfgrble( 'property', { 'property': 'value' } )` should return true",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `cnfgrble( 'property', { } )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `non-configurable property` should return false",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
+}

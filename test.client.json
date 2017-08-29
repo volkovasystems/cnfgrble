@@ -1,0 +1,151 @@
+{
+	"state": {
+		"passed": 3,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-29T02:53:16.595Z",
+	"end": "2017-08-29T02:53:51.718Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": {
+			"proxyType": "direct"
+		}
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd",
+		"slow": 0
+	},
+	"suites": [
+		{
+			"name": "cnfgrble",
+			"duration": 0,
+			"start": "2017-08-29T02:53:51.306Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "cnfgrble",
+			"duration": 241,
+			"start": "2017-08-29T02:53:51.306Z",
+			"end": "2017-08-29T02:53:51.547Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-29T02:53:51.308Z",
+					"end": "2017-08-29T02:53:51.308Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "cnfgrble",
+					"associatedTest": "should return true"
+				},
+				{
+					"start": "2017-08-29T02:53:51.449Z",
+					"end": "2017-08-29T02:53:51.449Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "cnfgrble",
+					"associatedTest": "should return true"
+				},
+				{
+					"start": "2017-08-29T02:53:51.450Z",
+					"end": "2017-08-29T02:53:51.450Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "cnfgrble",
+					"associatedTest": "should return false"
+				},
+				{
+					"start": "2017-08-29T02:53:51.501Z",
+					"end": "2017-08-29T02:53:51.501Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "cnfgrble",
+					"associatedTest": "should return false"
+				},
+				{
+					"start": "2017-08-29T02:53:51.501Z",
+					"end": "2017-08-29T02:53:51.501Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "cnfgrble",
+					"associatedTest": "should return false"
+				},
+				{
+					"start": "2017-08-29T02:53:51.547Z",
+					"end": "2017-08-29T02:53:51.547Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "cnfgrble",
+					"associatedTest": "should return false"
+				},
+				{
+					"start": "2017-08-29T02:53:51.548Z",
+					"end": "2017-08-29T02:53:51.548Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "cnfgrble"
+				}
+			]
+		},
+		{
+			"name": "`cnfgrble( 'property', { 'property': 'value' } )`",
+			"duration": 143,
+			"start": "2017-08-29T02:53:51.307Z",
+			"end": "2017-08-29T02:53:51.450Z",
+			"tests": [
+				{
+					"name": "should return true",
+					"start": "2017-08-29T02:53:51.307Z",
+					"end": "2017-08-29T02:53:51.449Z",
+					"duration": 142,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`cnfgrble( 'property', { } )`",
+			"duration": 51,
+			"start": "2017-08-29T02:53:51.450Z",
+			"end": "2017-08-29T02:53:51.501Z",
+			"tests": [
+				{
+					"name": "should return false",
+					"start": "2017-08-29T02:53:51.450Z",
+					"end": "2017-08-29T02:53:51.500Z",
+					"duration": 50,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`non-configurable property`",
+			"duration": 46,
+			"start": "2017-08-29T02:53:51.501Z",
+			"end": "2017-08-29T02:53:51.547Z",
+			"tests": [
+				{
+					"name": "should return false",
+					"start": "2017-08-29T02:53:51.501Z",
+					"end": "2017-08-29T02:53:51.546Z",
+					"duration": 45,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}

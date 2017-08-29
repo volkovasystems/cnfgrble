@@ -1,5 +1,7 @@
+"use strict";
+
 /*;
-	@module-license:
+	@test-license:
 		The MIT License (MIT)
 		@mit-license
 
@@ -23,62 +25,83 @@
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 		SOFTWARE.
-	@end-module-license
+	@end-test-license
 
-	@module-configuration:
+	@test-configuration:
 		{
 			"package": "cnfgrble",
-			"path": "cnfgrble/cnfgrble.js",
-			"file": "cnfgrble.js",
-			"module": "cnfgrble",
+			"path": "cnfgrble/test.module.js",
+			"file": "test.module.js",
+			"module": "test",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
 			"contributors": [
 				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
 				"Vinse Vinalon <vinsevinalon@gmail.com>"
 			],
-			"repository": "https://github.com/volkovasystems/cnfgrble.git",
-			"test": "cnfgrble-test.js",
-			"global": true
+			"repository": "https://github.com/volkovasystems/cnfgrble.git"
 		}
-	@end-module-configuration
+	@end-test-configuration
 
-	@module-documentation:
-		Checks if property is configurable.
-	@end-module-documentation
+	@test-documentation:
+
+	@end-test-documentation
 
 	@include:
 		{
-			"dscrb": "dscrb",
-			"kein": "kein",
-			"zelf": "zelf"
+			"assert": "should",
+			"cnfgrble": "cnfgrble",
+			"path": "path"
 		}
 	@end-include
 */
 
-const dscrb = require( "dscrb" );
-const kein = require( "kein" );
-const zelf = require( "zelf" );
+const assert = require( "should" );
 
-const cnfgrble = function cnfgrble( property, entity ){
-	/*;
-		@meta-configuration:
-			{
-				"property:required": [
-					"number"
-					"string",
-					"symbol"
-				],
-				"entity": "*"
-			}
-		@end-meta-configuration
-	*/
+//: @server:
+const cnfgrble = require( "./cnfgrble.js" );
+//: @end-server
 
-	if( arguments.length == 1 ){
-		entity = zelf( this );
-	}
 
-	return ( kein( property, entity ) && dscrb( property, entity ).configurable( ) );
-};
 
-module.exports = cnfgrble;
+
+
+//: @server:
+describe( "cnfgrble", ( ) => {
+
+	describe( "`cnfgrble( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should return true", ( ) => {
+			let result = cnfgrble( "property", { "property": "value" } );
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`cnfgrble( 'property', { } )`", ( ) => {
+		it( "should return false", ( ) => {
+			let result = cnfgrble( "property", { } );
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`non-configurable property`", ( ) => {
+		it( "should return false", ( ) => {
+			let data = { };
+			Object.defineProperty( data, "property", {
+				"value": 123,
+				"configurable": false
+			} );
+
+			let result = cnfgrble( "property", data );
+
+			assert.equal( result, false );
+		} );
+	} );
+
+} );
+//: @end-server
+
+
+
+
