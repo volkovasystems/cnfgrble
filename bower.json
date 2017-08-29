@@ -1,31 +1,32 @@
 {
-  "name": "cnfgrble",
-  "version": "0.8.0",
-  "description": "Checks if property is configurable.",
-  "main": "cnfgrble.deploy.js",
-  "support": "cnfgrble.support.js",
-  "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "check",
-    "property",
-    "configurable"
-  ],
-  "homepage": "https://github.com/volkovasystems/cnfgrble",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "asyum": "^0.9.0",
-    "dscrb": "^0.7.0",
-    "zelf": "^0.14.0"
-  }
+	"name": "cnfgrble",
+	"version": "0.9.0",
+	"description": "Checks if property is configurable.",
+	"main": "cnfgrble.deploy.js",
+	"support": "cnfgrble.support.js",
+	"authors": [
+		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"check",
+		"property",
+		"configurable",
+		"cnfgrble"
+	],
+	"homepage": "https://github.com/volkovasystems/cnfgrble",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"dscrb": "^0.7.0",
+		"kein": "^0.30.0",
+		"zelf": "^0.14.0"
+	}
 }
