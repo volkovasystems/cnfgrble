@@ -81,37 +81,9 @@ describe( "cnfgrble", ( ) => {
 		} );
 	} );
 
-	describe( "`cnfgrble( 'property', { } )`", ( ) => {
-		it( "should return false", ( ) => {
-			let result = cnfgrble( "property", { } );
-
-			assert.equal( result, false );
-		} );
-	} );
-
-	describe( "`non-configurable property`", ( ) => {
-		it( "should return false", ( ) => {
-			let data = { };
-			Object.defineProperty( data, "property", {
-				"value": 123,
-				"configurable": false
-			} );
-
-			let result = cnfgrble( "property", data );
-
-			assert.equal( result, false );
-		} );
-	} );
-
-} );
-//: @end-server
-
-//: @client:
-describe( "cnfgrble", ( ) => {
-
-	describe( "`cnfgrble( 'property', { 'property': 'value' } )`", ( ) => {
+	describe( "`cnfgrble( 'name', function yeah( ){ } )`", ( ) => {
 		it( "should return true", ( ) => {
-			let result = cnfgrble( "property", { "property": "value" } );
+			let result = cnfgrble( "name", function yeah( ){ } );
 
 			assert.equal( result, true );
 		} );
@@ -139,6 +111,66 @@ describe( "cnfgrble", ( ) => {
 		} );
 	} );
 
+	describe( "`cnfgrble( 'length', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should return false", ( ) => {
+			let result = cnfgrble( "length", [ 1, 2, 3 ] );
+
+			assert.equal( result, false );
+		} );
+	} );
+
+} );
+//: @end-server
+
+//: @client:
+describe( "cnfgrble", ( ) => {
+
+	describe( "`cnfgrble( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should return true", ( ) => {
+			let result = cnfgrble( "property", { "property": "value" } );
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`cnfgrble( 'name', function yeah( ){ } )`", ( ) => {
+		it( "should return true", ( ) => {
+			let result = cnfgrble( "name", function yeah( ){ } );
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`cnfgrble( 'property', { } )`", ( ) => {
+		it( "should return false", ( ) => {
+			let result = cnfgrble( "property", { } );
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`non-configurable property`", ( ) => {
+		it( "should return false", ( ) => {
+			let data = { };
+			Object.defineProperty( data, "property", {
+				"value": 123,
+				"configurable": false
+			} );
+
+			let result = cnfgrble( "property", data );
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`cnfgrble( 'length', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should return false", ( ) => {
+			let result = cnfgrble( "length", [ 1, 2, 3 ] );
+
+			assert.equal( result, false );
+		} );
+	} );
+
 } );
 //: @end-client
 
@@ -154,6 +186,21 @@ describe( "cnfgrble", ( ) => {
 
 				function( ){
 					return cnfgrble( "property", { "property": "value" } );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`cnfgrble( 'name', function yeah( ){ } )`", ( ) => {
+		it( "should return true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return cnfgrble( "name", function yeah( ){ } );
 				}
 
 			).value;
@@ -189,6 +236,21 @@ describe( "cnfgrble", ( ) => {
 					} );
 
 					return cnfgrble( "property", data );
+				}
+
+			).value;
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`cnfgrble( 'length', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should return false", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return cnfgrble( "length", [ 1, 2, 3 ] );
 				}
 
 			).value;

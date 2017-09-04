@@ -1,12 +1,12 @@
 {
 	"stats": {
-		"suites": 4,
-		"tests": 3,
-		"passes": 3,
+		"suites": 6,
+		"tests": 5,
+		"passes": 5,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-29T02:56:20.807Z",
-		"end": "2017-08-29T02:56:20.814Z",
+		"start": "2017-09-04T06:12:51.174Z",
+		"end": "2017-09-04T06:12:51.181Z",
 		"duration": 7
 	},
 	"tests": [
@@ -18,16 +18,30 @@
 			"err": {}
 		},
 		{
-			"title": "should return false",
-			"fullTitle": "cnfgrble `cnfgrble( 'property', { } )` should return false",
+			"title": "should return true",
+			"fullTitle": "cnfgrble `cnfgrble( 'name', function yeah( ){ } )` should return true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should return false",
-			"fullTitle": "cnfgrble `non-configurable property` should return false",
+			"fullTitle": "cnfgrble `cnfgrble( 'property', { } )` should return false",
 			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `non-configurable property` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `cnfgrble( 'length', [ 1, 2, 3 ] )` should return false",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -43,16 +57,30 @@
 			"err": {}
 		},
 		{
-			"title": "should return false",
-			"fullTitle": "cnfgrble `cnfgrble( 'property', { } )` should return false",
+			"title": "should return true",
+			"fullTitle": "cnfgrble `cnfgrble( 'name', function yeah( ){ } )` should return true",
 			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should return false",
-			"fullTitle": "cnfgrble `non-configurable property` should return false",
+			"fullTitle": "cnfgrble `cnfgrble( 'property', { } )` should return false",
 			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `non-configurable property` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "cnfgrble `cnfgrble( 'length', [ 1, 2, 3 ] )` should return false",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}

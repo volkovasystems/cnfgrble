@@ -77,6 +77,14 @@ describe( "cnfgrble", ( ) => {
 		} );
 	} );
 
+	describe( "`cnfgrble( 'name', function yeah( ){ } )`", ( ) => {
+		it( "should return true", ( ) => {
+			let result = cnfgrble( "name", function yeah( ){ } );
+
+			assert.equal( result, true );
+		} );
+	} );
+
 	describe( "`cnfgrble( 'property', { } )`", ( ) => {
 		it( "should return false", ( ) => {
 			let result = cnfgrble( "property", { } );
@@ -94,6 +102,14 @@ describe( "cnfgrble", ( ) => {
 			} );
 
 			let result = cnfgrble( "property", data );
+
+			assert.equal( result, false );
+		} );
+	} );
+
+	describe( "`cnfgrble( 'length', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should return false", ( ) => {
+			let result = cnfgrble( "length", [ 1, 2, 3 ] );
 
 			assert.equal( result, false );
 		} );
